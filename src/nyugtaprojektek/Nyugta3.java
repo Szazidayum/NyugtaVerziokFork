@@ -33,7 +33,7 @@ public class Nyugta3 {
         System.out.printf("%10s: %5d %s\n", "Szervízdíj", Szervizdij(), HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         System.out.println(duplaVonal);
-        System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo(), HUF);
+        System.out.printf("%10s:  %d %s\n", "Fizetendő", Fizetendo(), HUF);
         System.out.printf("%10s%7.2f %s\n","", Euro(), eur);//
         System.out.println(szaggatottVonal);
         System.out.println("");
@@ -55,12 +55,12 @@ public class Nyugta3 {
         int szervizDij = Osszesen() / szervizDijMertek;
         return szervizDij;
     }
-    public static int fizetendo(){
+    public static int Fizetendo(){
         int fizetendo = Osszesen() + Szervizdij();
         return fizetendo;
     }
     public static double Euro(){
-        double euro = fizetendo() / 350.0;
+        double euro = Fizetendo() / 350.0;
         return euro;
     }
 }
