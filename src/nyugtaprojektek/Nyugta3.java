@@ -57,7 +57,7 @@ public class Nyugta3 {
     }
     public static int fizetendo(){
         int fizetendo = Osszesen() + Szervizdij();
-        return fizetendo();
+        return fizetendo;
     }
     public static double Euro(){
         double euro = fizetendo() / 350.0;
