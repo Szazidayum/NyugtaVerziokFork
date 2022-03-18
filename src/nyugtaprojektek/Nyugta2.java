@@ -16,6 +16,10 @@ public class Nyugta2 {
     static String rovidVonal = "_______";
 
     public static void main(String[] args) {
+        kiiras();
+    }
+    
+    public static void kiiras(){
         System.out.println(csillagok);
         System.out.println("     Nyugta 2");
         System.out.println(csillagok);
