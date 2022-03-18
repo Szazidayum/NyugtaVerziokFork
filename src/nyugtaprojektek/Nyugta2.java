@@ -14,6 +14,7 @@ public class Nyugta2 {
     static String duplaVonal = "===================";
     static String szaggatottVonal = "-------------------";
     static String rovidVonal = "_______";
+    static int kedvMertek = 10;
 
     public static void main(String[] args) {
         kiiras();
@@ -27,19 +28,14 @@ public class Nyugta2 {
         System.out.printf("Tétel 1:      %d %s\n", tetel2, huf);
         System.out.printf("Tétel 3:    %d %s\n", tetel3, huf);
         System.out.println(duplaVonal);
-        int osszesen = tetel1 + tetel2 + tetel3;
-        System.out.printf("Összesen:   %d %s\n", osszesen, huf);
+        System.out.printf("Összesen:   %d %s\n", Osszesen(), huf);
         System.out.println(szaggatottVonal);
-        int kedvMertek = 10;
-        int kedvezmeny = osszesen / kedvMertek;
-        System.out.printf("Kedvezmény:  %d %s\n", kedvezmeny, huf);
+        System.out.printf("Kedvezmény:  %d %s\n", Kedvezmenyek(), huf);
         System.out.printf("(%d%%)\n", kedvMertek);
         System.out.println(duplaVonal);
-        int fizetendo = osszesen - kedvezmeny;
-        System.out.printf("Fizetendő:  %d %s\n", fizetendo, huf);
-        double euro = fizetendo / 350.0;
+        System.out.printf("Fizetendő:  %d %s\n", Fizetendo(), huf);
         huf = "\u20ac";
-        System.out.printf("            %f %s\n", euro, huf);
+        System.out.printf("            %f %s\n", Euro(), huf);
         System.out.println(szaggatottVonal);
         System.out.println("");
         System.out.print(rovidVonal);
@@ -53,5 +49,20 @@ public class Nyugta2 {
         System.out.println("        CÉG");
         System.out.println(csillagok);
     }
-
+    public static int Osszesen(){
+        int osszesen = tetel1 + tetel2 + tetel3;
+        return osszesen;
+    }
+    public static int Kedvezmenyek(){
+        int kedvezmeny = Osszesen() / kedvMertek;
+        return kedvezmeny;
+    }
+    public static int Fizetendo(){
+        int fizetendo = Osszesen() - Kedvezmenyek();
+        return fizetendo;
+    }
+    public static double Euro(){
+        double euro = Fizetendo() / 350.0;
+        return euro;
+    }
 }

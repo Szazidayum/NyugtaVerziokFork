@@ -28,13 +28,13 @@ public class Nyugta3 {
         System.out.printf("%10s: %5d %s\n", "Tétel 2", tetel2, HUF);
         System.out.printf("%10s: %5d %s\n", "Tétel 3", tetel3, HUF);
         System.out.println(duplaVonal);
-        System.out.printf("%10s: %5d %s\n", "Összesen", osszesen(), HUF);
+        System.out.printf("%10s: %5d %s\n", "Összesen", Osszesen(), HUF);
         System.out.println(szaggatottVonal);
-        System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizdij(), HUF);
+        System.out.printf("%10s: %5d %s\n", "Szervízdíj", Szervizdij(), HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         System.out.println(duplaVonal);
         System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo(), HUF);
-        System.out.printf("%10s%7.2f %s\n","", euro(), eur);//
+        System.out.printf("%10s%7.2f %s\n","", Euro(), eur);//
         System.out.println(szaggatottVonal);
         System.out.println("");
         System.out.print(rovidVonal);
@@ -47,19 +47,19 @@ public class Nyugta3 {
         System.out.println("        CÉG");
         System.out.println(csillagok);
     }
-    public static int osszesen(){
+    public static int Osszesen(){
         int osszesen = tetel1 + tetel2 + tetel3;
         return osszesen;
     }
-    public static int szervizdij(){
-        int szervizDij = osszesen() / szervizDijMertek;
+    public static int Szervizdij(){
+        int szervizDij = Osszesen() / szervizDijMertek;
         return szervizDij;
     }
     public static int fizetendo(){
-        int fizetendo = osszesen() + szervizdij();
+        int fizetendo = Osszesen() + Szervizdij();
         return fizetendo();
     }
-    public static double euro(){
+    public static double Euro(){
         double euro = fizetendo() / 350.0;
         return euro;
     }
